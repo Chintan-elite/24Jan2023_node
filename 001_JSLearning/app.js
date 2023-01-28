@@ -130,14 +130,69 @@ var a = [10, 20, 30, 40, 50, 60, 30, "abc"];
 
 
 
-var str = " sun rises in east ";
+// var str = " sun rises in east ";
 
-console.log(str.length);
-console.log(str.charAt(5));
-console.log(str.indexOf("s"));
-console.log(str.lastIndexOf("s"));
-console.log(str.endsWith("a"));
-console.log(str.split(" "));
-console.log(str.trim());
-console.log(str.toUpperCase());
-console.log(str.substring(5, 12));
+// console.log(str.length);
+// console.log(str.charAt(5));
+// console.log(str.indexOf("s"));
+// console.log(str.lastIndexOf("s"));
+// console.log(str.endsWith("a"));
+// console.log(str.split(" "));
+// console.log(str.trim());
+// console.log(str.toUpperCase());
+// console.log(str.substring(5, 12));
+//string concate
+
+
+
+
+//class And object
+// var a;
+// class Demo {
+
+//     constructor(k) {
+//         a = k;
+//     }
+
+//     sample() {
+//         console.log("Sample calling" + a);
+//     }
+//     add(a, b) {
+//         console.log(a + b);
+//     }
+// }
+
+
+// var d = new Demo(10);
+// d.sample()
+// d.add(10, 20)
+
+//Date
+
+// var d = new Date();
+// console.log(d);
+// console.log(d.getDate());
+// console.log(d.getDay());
+// console.log(d.getFullYear());
+// console.log(d.getHours());
+// console.log(d.getMinutes());
+// console.log(Date.now());
+
+// var d = new Date(859655555)
+// console.log(d);
+
+
+//math
+
+//var m = new Math()
+// console.log(Math.PI);
+// console.log(Math.floor(3.6));
+// console.log(Math.ceil(3.6));
+// console.log(Math.round(3.4));
+
+
+
+
+
+
+
