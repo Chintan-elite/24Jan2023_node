@@ -41,3 +41,15 @@ function validation() {
     }
 
 }
+
+setTimeout(() => {
+    dt.innerHTML = new Date()
+}, 3000);
+
+
+setInterval(() => {
+    dt1.innerHTML = new Date()
+}, 1000);
+
+
+

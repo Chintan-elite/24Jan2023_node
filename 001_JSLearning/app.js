@@ -191,6 +191,24 @@ var a = [10, 20, 30, 40, 50, 60, 30, "abc"];
 // console.log(Math.round(3.4));
 
 
+//object
+
+// const student = {
+//     name: "tops",
+//     email: "tops@gmial.com",
+//     phno: 9585858554
+// }
+
+// //object to json
+// const stjson = JSON.stringify(student)
+
+// //json to object
+// const original = JSON.parse(stjson)
+// console.log(student);
+// console.log(stjson);
+// console.log(original);
+
+
 
 
 
