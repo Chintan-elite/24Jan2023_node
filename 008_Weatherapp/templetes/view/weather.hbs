@@ -10,7 +10,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
-<body>
+<body onload="getCountries()">
     {{>header}}
 
     <section class="vh-100">
@@ -22,13 +22,21 @@
                     <h3 class="mb-4 pb-2 fw-normal">Check the weather forecast</h3>
 
                     <div class="input-group rounded mb-3">
-                        <input type="search" class="form-control rounded" placeholder="City" aria-label="Search"
-                            aria-describedby="search-addon" id="cityname" />
-                        <a href="#!" type="button">
-                            <span class="input-group-text border-0 fw-bold" id="search-addon" onclick="getWeather()">
-                                Check!
-                            </span>
-                        </a>
+                        <select name="country" id="country" class="form-control rounded" onchange="getState(value)">
+                            <option value=" 0">---Select country---</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group rounded mb-3">
+                        <select name="state" id="state" class="form-control rounded" onchange="getcities(value)">
+                            <option value=" 0">---Select state---</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group rounded mb-3">
+                        <select name="city" id="city1" class="form-control rounded" onchange="getWeather(value)">
+                            <option value=" 0">---Select city---</option>
+                        </select>
                     </div>
 
 
