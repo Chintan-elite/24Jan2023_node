@@ -1,7 +1,7 @@
 const express = require("express")
 const router = express.Router()
 const User = require("../model/User")
-
+const bcrypt = require("bcryptjs")
 router.get("/users", (req, resp) => {
 
     User.find().then(data => {
@@ -15,6 +15,7 @@ router.get("/users", (req, resp) => {
 
 router.post("/users", (req, resp) => {
     const user = new User(req.body)
+    
     user.save().then(data => {
         resp.send(data)
     }).catch(err => {
@@ -48,6 +49,23 @@ router.delete("/users/:id", (req, resp) => {
     }).catch(err => {
         resp.send(err)
     })
+})
+
+router.post("/userlogin", async (req, resp) => {
+    try {
+        const email = req.body.email;
+        const pass = req.body.pass;
+        const userdata = await User.findOne({ email: email })
+        const valid = await bcrypt.compare(pass, userdata.pass)
+        if (valid) {
+            resp.send("Welcome , " + userdata.uname)
+        }
+        else {
+            resp.send("Invalid credentials !!!!")
+        }
+    } catch (error) {
+        resp.send("Invalid credentials !!!!")
+    }
 })
 
 
