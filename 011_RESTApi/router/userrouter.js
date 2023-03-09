@@ -5,7 +5,7 @@ const bcrypt = require("bcryptjs")
 const jwt = require("jsonwebtoken")
 const auth = require("../middelware/auth")
 
-router.get("/users",auth, (req, resp) => {
+router.get("/users", auth, (req, resp) => {
 
     User.find().then(data => {
         resp.send(data)
@@ -61,8 +61,8 @@ router.post("/userlogin", async (req, resp) => {
         const userdata = await User.findOne({ email: email })
         const valid = await bcrypt.compare(pass, userdata.pass)
         if (valid) {
-
-           
+            const token = await jwt.sign({ _id: userdata._id }, "thisismyloginwebtoken")
+            resp.send("Token  : " + token)
         }
         else {
             resp.send("Invalid credentials !!!!")
