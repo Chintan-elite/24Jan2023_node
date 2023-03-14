@@ -23,7 +23,7 @@ router.post("/addUser", async (req, resp) => {
         var _id = req.body._id;
 
         if (_id == "") {
-            console.log("test");
+           
             const user = new User({ uname: req.body.uname, email: req.body.email, pass: req.body.pass })
             await user.save();
         }
