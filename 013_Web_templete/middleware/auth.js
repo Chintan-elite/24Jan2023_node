@@ -8,8 +8,20 @@ const auth = async (req, resp, next) => {
         const data = await jwt.verify(token, process.env.SKEY)
         if (data) {
             const userdata = await User.findOne({ _id: data._id })
-            req.user = userdata;
-            next();
+
+            const myt = userdata.Tokens.find(e => {
+                return e.token == token
+            })
+
+            if (myt == undefined) {
+                resp.render("login", { err: "Please login first!!!" })
+            } else {
+                req.user = userdata;
+                req.token = token
+                next();
+            }
+
+
         }
         else {
             resp.render("login", { err: "Please login first!!!" })

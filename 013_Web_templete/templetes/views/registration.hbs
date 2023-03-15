@@ -54,7 +54,7 @@
                             <div class="card-body p-5">
                                 <h2 class="text-uppercase text-center mb-5">Create an account</h2>
                                 <span class="text-success">{{msg}}</span>
-                                <form action="addUser" method="post">
+                                <form action="addUser" method="post" enctype="multipart/form-data">
 
                                     <div class="form-outline mb-4">
                                         <input type="text" id="form3Example1cg" class="form-control form-control-lg"
@@ -72,6 +72,12 @@
                                         <input type="password" id="form3Example4cg" class="form-control form-control-lg"
                                             name="pass" />
                                         <label class="form-label" for="form3Example4cg">Password</label>
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <input type="file" id="form3Example4cg" class="form-control form-control-lg"
+                                            name="file" />
+                                        <label class="form-label" for="form3Example4cg">Profile Picture</label>
                                     </div>
 
 
